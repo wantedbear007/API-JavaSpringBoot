@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.Map;
+
 
 //this @SprintBootApplication is a Java annotation that is used to tell compiler what this class is about
 @SpringBootApplication
@@ -16,10 +20,19 @@ public class NothingApplication {
 	}
 
 //	Writing the endpoints
-//	@GetMapping("/phones")
-//	public String apiRoute() {
-//		return "Hello from Spring Framework";
-//	}
+
+	@GetMapping("/")
+	public String root() {
+		return "Server active haii";
+	}
+	@GetMapping("/root")
+	public Dictionary<Integer, String> apiRoute() {
+		Dictionary<Integer, String> dict = new Hashtable<>();
+
+		dict.put(1, "Bhanupratap");
+		dict.put(2, "Abhijeet");
+		return dict;
+	}
 
 
 }
